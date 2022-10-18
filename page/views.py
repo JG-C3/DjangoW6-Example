@@ -41,7 +41,7 @@ def detail(request, posting_id):
     return render(request, 'page/detail.html', context)
 
 def update(request, posting_id):
-    # [코드 작성] Post 모델의 객체 중 id 값이 posting_id와 같은 객체를 가져옴
+    # [코드 작성] Posting 모델의 객체 중 id 값이 posting_id와 같은 객체를 가져옴
     posting = Posting.objects.get(id=posting_id)
 
     # 만약 form에서 값을 전송하는 방식이 'POST'일 경우
@@ -66,6 +66,8 @@ def update(request, posting_id):
         return render(request, 'page/update.html', context)
 
 def delete(request, posting_id):
+    # [코드 작성] Posting 모델의 객체 중 id 값이 posting_id와 같은 객체를 가져옴
     posting = Posting.objects.get(id=posting_id)
+    # [코드 작성] posting 객체 삭제
     posting.delete()
     return redirect('page:read')
