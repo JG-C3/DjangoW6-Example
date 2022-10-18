@@ -5,6 +5,7 @@
     table {
       width: 100%;
       border-collapse: collapse;
+      table-layout: fixed;
     }
     td {
       padding: 10px;
@@ -12,6 +13,10 @@
     }
     .title {
       font-size: 1.5rem;
+    }
+    .functions {
+      width: 7rem;
+      white-space: nowrap;
     }
     .content {
       display: flex;
@@ -22,11 +27,15 @@
       margin: 10px 0;
     }
     .right {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: right;
       padding-top: 20px;
       text-align: right;
     }
     .button {
-      padding: 8px 10px;
+      margin: 1px 2px;
+      padding: 3px 10px;
       border: 1px solid;
       border-radius: 10px;
       background-color: Khaki;
@@ -42,7 +51,7 @@
   <table>
     <tr>
       <td class="title">{{post.title}}</td>
-      <td>
+      <td class="functions">
         <div class="right">
           <a class="button" href="{% url 'page:update' post.id %}">수정</a>
           <a class="button" href="{% url 'page:delete' post.id %}">삭제</a>
