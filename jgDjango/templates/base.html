@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>jgDjango</title>
-  <link rel="icon" href="{% static 'image/favicon-96x96.png' %}">
+  <link rel="icon" href="{% static 'images/favicon-96x96.png' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
   {% block head %}
@@ -16,7 +16,7 @@
   <div class="navbar">
     <span>
       <a href="{% url 'page:index' %}">
-        <img class="logo" src="{% static 'image/jgcat.jpg' %}" alt="jgcat">
+        <img class="logo" src="{% static 'images/jgcat.jpg' %}" alt="jgcat">
       </a>
     </span>
     <span>
@@ -27,6 +27,12 @@
     </span>
     <span>
       <a href="{% url 'game:rsp' %}">가위바위보 게임</a>
+    </span>
+    <span>
+      <a href="{% url 'game:list_weapon' %}">무기 목록</a>
+    </span>
+    <span>
+      <a href="{% url 'game:create_weapon' %}">무기 생성</a>
     </span>
   </div>
 
