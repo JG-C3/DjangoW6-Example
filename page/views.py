@@ -9,7 +9,7 @@ def index(request):
 def create(request):
     # 만약 form에서 값을 전송하는 방식이 'POST'일 경우
     if request.method == 'POST':
-        # [미션] POST 방식으로 넘어온 값 중 'title'과 'content'의 값을 딕셔너리 형태로 반환
+        # POST 방식으로 넘어온 값 중 'title'과 'content'의 값을 딕셔너리 형태로 반환
         posting_title = request.POST.get('title')
         posting_content = request.POST.get('content')
 
@@ -27,7 +27,7 @@ def read(request):
     # [미션] Posting 모델의 모든 객체를 리스트로 가져오기
     postings = Posting.objects.all()
     context = {
-        # [미션] context에 postings 리스트를 딕셔너리 형식으로 넘겨주기
+        # context에 postings 리스트를 딕셔너리 형식으로 넘겨주기
         'postings': postings,
     }
     return render(request, 'page/read.html', context)
