@@ -27,7 +27,8 @@ def read(request):
     # [미션] Posting 모델의 모든 객체를 리스트로 가져오기
     postings = Posting.objects.all()
     context = {
-        # context에 postings 리스트를 딕셔너리 형식으로 넘겨주기
+        # [미션] context를 이용하여 postings 리스트를 딕셔너리 형식으로 html에 넘겨주기
+        # [미션] None을 지우고 작성
         'postings': postings,
     }
     return render(request, 'page/read.html', context)
@@ -36,6 +37,8 @@ def detail(request, posting_id):
     # [코드 작성] Posting 모델의 객체 중 id 값이 posting_id와 같은 객체를 가져옴
     posting = Posting.objects.get(id=posting_id)
     context = {
+        # [코드 수정] posting 객체에 저장되어있는 값을 html에 넘겨주기
+        # [코드 수정] None을 지우고 작성
         'posting': posting,
     }
     return render(request, 'page/detail.html', context)
@@ -60,7 +63,8 @@ def update(request, posting_id):
         return redirect('page:detail', posting_id)
     else:
         context = {
-            # [코드 작성] posting 객체에 저장되어있는 값을 html에 넘겨주기
+            # [코드 수정] posting 객체에 저장되어있는 값을 html에 넘겨주기
+            # [코드 수정] None을 지우고 작성
             'posting': posting,
         }
         return render(request, 'page/update.html', context)

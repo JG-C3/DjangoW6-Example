@@ -69,7 +69,7 @@ def list_weapon(request):
     weapons = Weapon.objects.all()
 
     context = {
-        # [미션] weapons 리스트를 HTML로 넘겨주기
+        # [미션] weapons 리스트를 html에 넘겨주기
         # [미션] None을 지우고 작성
         'weapons': weapons,
     }
